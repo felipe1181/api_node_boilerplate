@@ -7,6 +7,7 @@ class UserController {
   async store (req, res, next) {
     try {
       const { body } = req
+      console.log(body)
       const response = await UserService.store(body)
 
       if (response.status !== HTTP.CREATED) {
