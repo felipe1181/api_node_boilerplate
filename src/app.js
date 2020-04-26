@@ -4,10 +4,7 @@ import plugins related to middleware, routes and auth
 const express = require('express')
 const cors = require('cors')
 
-/*
-import settings env
-*/
-
+// import settings env
 class AppController {
   constructor () {
     this.express = express()
@@ -23,6 +20,8 @@ class AppController {
   routes () {
     this.express.use('/api', require('./routes'))
   }
+
+  // configure errors
 }
 
 module.exports = new AppController().express
