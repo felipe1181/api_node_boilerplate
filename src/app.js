@@ -9,14 +9,19 @@ class AppController {
   constructor () {
     this.express = express()
 
+    // load express
+
     this.middlewares()
+    this.routes()
   }
 
+  // configure middlewares
   middlewares () {
     this.express.use(cors())
     this.express.use(express.json())
   }
 
+  // import routes to router main
   routes () {
     this.express.use('/api', require('./routes'))
   }
