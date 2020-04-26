@@ -1,5 +1,6 @@
 ###Arquitetura nodejs boilerplate
 
+```
 Representação estrutural:
 
 src
@@ -20,5 +21,5 @@ src
  |_____utils/helpers    # Trechos de código pequeno.
  |_____routes           # Definição de rotas express.
  |_____types            # Tipagem (d.ts) para Typescript.
-=======
+```
 
