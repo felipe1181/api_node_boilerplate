@@ -1,8 +1,9 @@
-const { User } = require('../models')
+const connection = require('../models')
 const Response = require('../../constants/response')
 
 class UserService {
   constructor () {
+    const { User } = connection.models
     this.user = User
   }
 
