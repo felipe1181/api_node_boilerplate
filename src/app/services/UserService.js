@@ -38,6 +38,7 @@ class UserService {
         returning: true
       })
 
+    userUpdate.password = undefined
     return {
       user: userUpdate,
       ...Response.userOk
@@ -50,6 +51,7 @@ class UserService {
       return Response.userNotFound
     }
 
+    user.password = undefined
     return {
       user,
       ...Response.userOk
