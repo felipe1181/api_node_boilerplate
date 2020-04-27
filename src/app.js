@@ -19,6 +19,7 @@ class AppController {
   middlewares () {
     this.express.use(cors())
     this.express.use(express.json())
+    this.express.use('/api', require('./routes/auth'))
   }
 
   // import routes to router main

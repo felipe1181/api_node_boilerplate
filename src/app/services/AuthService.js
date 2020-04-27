@@ -12,15 +12,17 @@ class AuthService {
 
   async store (body) {
     const { email, password } = body
+    if (email === undefined || password === undefined) return Response.incorretLogin
     const user = await this.user.findOne({ where: { email } })
 
     if (!user) return Response.incorretLogin
     if (!(await utilCheckPassword(password, user.password))) return Response.incorretLogin
 
+    user.password = undefined
     return {
       user,
       status: HTTP.OK,
-      token: utilGenerateToken(user.password)
+      token: utilGenerateToken(user.id).toString()
     }
   }
 }

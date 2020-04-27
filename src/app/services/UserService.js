@@ -13,8 +13,10 @@ class UserService {
     const user = await this.check(body.email)
 
     if (!user) {
+      const userCreated = await this.user.create({ ...body })
+      userCreated.password = undefined
       return {
-        user: await this.user.create({ ...body }),
+        user: userCreated,
         ...Response.userCreated
       }
     }

@@ -3,7 +3,7 @@ const HTTP = require('./http')
 module.exports = {
   tokenError: {
     type: 'tokenError',
-    status: HTTP.BAD_REQUEST,
+    status: HTTP.UNAUTHENTICATED,
     describe: 'Token error'
   },
 

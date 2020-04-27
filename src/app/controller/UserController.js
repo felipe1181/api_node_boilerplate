@@ -9,10 +9,7 @@ class UserController {
       const { body } = req
       const response = await UserService.store(body)
 
-      if (response.status !== HTTP.CREATED) {
-        const e = new ErrorService(req, response)
-        return next(e.get())
-      }
+      if (response.status !== HTTP.CREATED) return next(new ErrorService(req, response).get())
 
       return res
         .status(HTTP.CREATED)
