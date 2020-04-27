@@ -1,5 +1,5 @@
 const connection = require('../models')
-const Response = require('../../constants/response')
+const Response = require('../../constants/ResponseUser')
 
 class UserService {
   constructor () {
