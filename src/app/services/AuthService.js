@@ -22,7 +22,8 @@ class AuthService {
     return {
       user,
       status: HTTP.OK,
-      token: utilGenerateToken(user.id).toString()
+      token: utilGenerateToken(user.id),
+      auth: true
     }
   }
 }

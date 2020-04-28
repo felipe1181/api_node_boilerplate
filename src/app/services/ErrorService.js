@@ -12,6 +12,7 @@ class ErrorService {
     error.isOperational = true
     error.errorType = this.type
     error.body = this.req.body
+
     return error
   }
 }

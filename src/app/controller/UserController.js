@@ -25,7 +25,8 @@ class UserController {
       const response = await UserService.update(body, req.params.id)
 
       if (response.status !== HTTP.OK) {
-        return next(new ErrorService(req, response).get())
+        return res.status(response.status)
+          .json({ error: new ErrorService(req, response).get() })
       }
 
       return res

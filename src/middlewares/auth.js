@@ -30,5 +30,5 @@ module.exports = (req, res, next) => {
 }
 
 function errorToken (res) {
-  return res.status(HTTP.UNAUTHENTICATED).json({ error: ResponseAuth.tokenError })
+  return res.status(HTTP.UNAUTHENTICATED).json({ error: ResponseAuth.tokenError, auth: false })
 }
