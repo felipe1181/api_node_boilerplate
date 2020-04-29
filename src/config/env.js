@@ -5,6 +5,7 @@ dotenv.config({
 })
 
 module.exports = {
+  env: process.env.NODE_ENV,
   appSecret: process.env.APP_SECRET,
   tokenLifetime: process.env.TOKEN_LIFETIME,
   portServer: process.env.PORT_SERVER,
