@@ -1,0 +1,28 @@
+2020-04-29 10:39:53 info [error.js]: ::1 - - [29/Apr/2020:13:39:53 +0000] "POST /api/signin HTTP/1.1" 400 119 "-" "insomnia/7.1.1"
+
+2020-04-29 10:40:24 info [error.js]: ::1 - - [29/Apr/2020:13:40:24 +0000] "POST /api/signin HTTP/1.1" 200 312 "-" "insomnia/7.1.1"
+
+2020-04-29 10:40:52 info [error.js]: ::1 - - [29/Apr/2020:13:40:52 +0000] "GET /api/users/11 HTTP/1.1" 200 175 "-" "insomnia/7.1.1"
+
+2020-04-29 10:41:14 info [error.js]: ::1 - - [29/Apr/2020:13:41:14 +0000] "GET /api/users/11 HTTP/1.1" 200 175 "-" "insomnia/7.1.1"
+
+2020-04-29 10:45:30 info [error.js]: ::1 - - [29/Apr/2020:13:45:30 +0000] "GET /api/users/11 HTTP/1.1" 200 175 "-" "insomnia/7.1.1"
+
+2020-04-29 10:46:10 info [error.js]: ::1 - - [29/Apr/2020:13:46:10 +0000] "GET /api/users/11 HTTP/1.1" 401 82 "-" "insomnia/7.1.1"
+
+2020-04-29 10:48:26 info [error.js]: ::1 - - [29/Apr/2020:13:48:26 +0000] "GET /api/users/11 HTTP/1.1" 200 175 "-" "insomnia/7.1.1"
+
+2020-04-29 10:50:09 info [error.js]: ::1 - - [29/Apr/2020:13:50:09 +0000] "GET /api/users/11 HTTP/1.1" 200 175 "-" "insomnia/7.1.1"
+
+2020-04-29 10:50:38 info [error.js]: ::1 - - [29/Apr/2020:13:50:38 +0000] "PUT /api/users/4 HTTP/1.1" 401 82 "-" "insomnia/7.1.1"
+
+2020-04-29 10:56:18 info [error.js]: ::1 - - [29/Apr/2020:13:56:18 +0000] "PUT /api/users/4 HTTP/1.1" 401 82 "-" "insomnia/7.1.1"
+
+2020-04-29 10:56:33 info [error.js]: ::1 - - [29/Apr/2020:13:56:33 +0000] "PUT /api/users/4 HTTP/1.1" 401 82 "-" "insomnia/7.1.1"
+
+2020-04-29 10:56:37 info [error.js]: ::1 - - [29/Apr/2020:13:56:37 +0000] "GET /api/users/11 HTTP/1.1" 401 82 "-" "insomnia/7.1.1"
+
+2020-04-29 11:03:27 info [error.js]: ::1 - - [29/Apr/2020:14:03:27 +0000] "GET /api/users/11 HTTP/1.1" 401 82 "-" "insomnia/7.1.1"
+
+2020-04-29 11:04:32 info [error.js]: ::1 - - [29/Apr/2020:14:04:32 +0000] "GET /api/users/11 HTTP/1.1" 401 82 "-" "insomnia/7.1.1"
+

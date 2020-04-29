@@ -19,12 +19,13 @@ const errorHandler = {
 }
 
 const errorMiddleware = (err, req, res, next) => {
+  console.log('asdsadasdsad', req.userId)
   logger.error(
     `${err.code || 500}${
       req.userId ? ` - usuario_id: ${req.userId}` : ''
     } - errMsg: ${err.message} - url: ${req.originalUrl} - method: ${
       req.method
-    } - ip: ${req.ip} - error: ${JSON.stringify(err, null, 2)}`
+    } - ip: ${req.headers['x-forwarded-for'] || req.connection.remoteAddress} - error: ${JSON.stringify(err, null, 2)}`
   )
 
   if (!err.isOperational && config.env.local !== 'test') {

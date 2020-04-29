@@ -9,13 +9,12 @@ const helmet = require('helmet')
 const corsOptions = require('./middlewares/cors')
 const routesAuth = require('./routes/auth')
 const routesSystem = require('./routes')
-const core = require('./config/core')
+const Core = require('./config/core')
 
 // import settings env
 class AppController {
   constructor () {
     this.express = express()
-
     // load express
 
     this.middlewares()
@@ -26,7 +25,7 @@ class AppController {
   // configure middlewares
   middlewares () {
     this.express.use(cors(corsOptions))
-    this.express.use(morgan('combined', { stream: core.stream }))
+    this.express.use(morgan('combined', { stream: Core.stream }))
     this.express.use(helmet())
     this.express.use(express.json())
     this.express.use('/api', routesAuth)
@@ -39,19 +38,19 @@ class AppController {
 
   // configure errors
   errorManagement () {
-    this.express.use(core.notFoundHandler)
-    this.express.use(core.errorMiddleware)
+    this.express.use(Core.notFoundHandler)
+    this.express.use(Core.errorMiddleware)
 
     process.on('unhandledRejection', reason => {
-      core.logger.info('Unhandled rejection, throwing')
+      Core.logger.info('Unhandled rejection, throwing')
       throw reason
     })
 
     process.on('uncaughtException', error => {
-      core.logger.info('Unhandled exception, handling')
+      Core.logger.info('Unhandled exception, handling')
 
-      core.errorHandler.handleError(error)
-      if (!core.errorHandler.isTrustedError(error)) {
+      Core.errorHandler.handleError(error)
+      if (!Core.errorHandler.isTrustedError(error)) {
         process.exit(1)
       }
     })
