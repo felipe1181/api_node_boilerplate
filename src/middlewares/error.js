@@ -19,7 +19,6 @@ const errorHandler = {
 }
 
 const errorMiddleware = (err, req, res, next) => {
-  console.log('asdsadasdsad', req.userId)
   logger.error(
     `${err.code || 500}${
       req.userId ? ` - usuario_id: ${req.userId}` : ''

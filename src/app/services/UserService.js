@@ -8,17 +8,19 @@ class UserService {
   }
 
   async store (body) {
-    // check user exists
-
-    const user = await this.check(body.email)
-
-    if (!user) {
-      const userCreated = await this.user.create({ ...body })
-      userCreated.password = undefined
-      return {
-        user: userCreated,
-        ...Response.userCreated
+    try {
+      // check user exists
+      const user = await this.user.findOne({ where: { cpf: body.cpf } })
+      if (!user) {
+        const userCreated = await this.user.create({ ...body })
+        userCreated.cpf = undefined
+        return {
+          user: userCreated,
+          ...Response.userCreated
+        }
       }
+    } catch (err) {
+      return Response.userFound
     }
 
     return Response.userFound
@@ -38,7 +40,7 @@ class UserService {
         returning: true
       })
 
-    userUpdate.password = undefined
+    userUpdate.cpf = undefined
     return {
       user: userUpdate,
       ...Response.userOk
@@ -51,15 +53,15 @@ class UserService {
       return Response.userNotFound
     }
 
-    user.password = undefined
+    user.cpf = undefined
     return {
       user,
       ...Response.userOk
     }
   }
 
-  check (email) {
-    return this.user.findOne({ where: { email } })
+  check (cpf) {
+    return this.user.findOne({ where: { cpf } })
   }
 }
 

@@ -3,7 +3,7 @@ const Sequelize = require('sequelize')
 const config = require('../../config/database')
 
 const requireModels = requireDirectory(module)
-const db = [requireModels.Users]
+const db = [requireModels.Users, requireModels.ConsultasMedicas]
 
 const connection = new Sequelize(
   config.database,
