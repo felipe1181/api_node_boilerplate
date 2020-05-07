@@ -1,7 +1,7 @@
 'use strict'
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('consultasMedicas', {
+    return queryInterface.createTable('consultas_medicas', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -20,49 +20,39 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         allowNull: false
       },
-      dorNoCorpo: {
+      dor_no_corpo: {
         type: Sequelize.BOOLEAN,
         allowNull: false
       },
-      CorpoMoleFraqueza: {
+      corpo_mole_fraqueza: {
         type: Sequelize.BOOLEAN,
         allowNull: false
       },
-      DorDeGarganta: {
+      dor_de_garganta: {
         type: Sequelize.BOOLEAN,
         allowNull: false
       },
-      faltaDeAr: {
+      falta_de_ar: {
         type: Sequelize.BOOLEAN,
         allowNull: false
       },
-      doencasPreexistentes: {
+      doencas_preexistentes: {
         type: Sequelize.BOOLEAN,
         allowNull: false
       },
-      fezTratamentoEspecial: {
+      fez_tratamento_especial: {
         type: Sequelize.BOOLEAN,
         allowNull: false
       },
-      sensacaoDesmaio: {
+      sensacao_desmaio: {
         type: Sequelize.BOOLEAN,
         allowNull: false
       },
-      quandoComecou: {
+      quando_comecou: {
         type: Sequelize.INTEGER,
         allowNull: false
       },
-      fkUserPaciente: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'users',
-          key: 'id'
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'RESTRICT',
-        allowNull: true
-      },
-      fkUserMedico: {
+      fk_user_paciente: {
         type: Sequelize.INTEGER,
         references: {
           model: 'users',
@@ -72,17 +62,27 @@ module.exports = {
         onDelete: 'RESTRICT',
         allowNull: true
       },
-      createdAt: {
+      fk_user_medico: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'users',
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'RESTRICT',
+        allowNull: true
+      },
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE
       }
     })
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('consultasMedicas')
+    return queryInterface.dropTable('consultas_medicas')
   }
 }
