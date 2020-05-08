@@ -3,8 +3,8 @@ const Response = require('../../constants/ResponseUser')
 
 class UserService {
   constructor () {
-    const { User } = connection.models
-    this.user = User
+    const { Users } = connection.models
+    this.user = Users
   }
 
   async store (body) {

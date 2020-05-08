@@ -2,7 +2,7 @@
 
 const { Model, DataTypes } = require('sequelize')
 
-class ConsultaMedica extends Model {
+class ConsultasMedicas extends Model {
   static init (sequelize) {
     super.init({
       febre: { type: DataTypes.BOOLEAN, defaultValue: false },
@@ -15,15 +15,16 @@ class ConsultaMedica extends Model {
       doencasPreexistentes: { type: DataTypes.BOOLEAN, defaultValue: false },
       fezTratamentoEspecial: { type: DataTypes.BOOLEAN, defaultValue: false },
       sensacaoDesmaio: { type: DataTypes.BOOLEAN, defaultValue: false },
-      quandoComecou: { type: DataTypes.INTEGER, defaultValue: 0 }
+      quandoComecou: { type: DataTypes.INTEGER, defaultValue: 0 },
+      statusConsulta: { type: DataTypes.STRING, defaultValue: 'ESPERA' }
     }, {
       sequelize
     })
   }
 
   static associate (models) {
-    this.belongsTo(models.User, { foreignKey: 'fkUserPaciente', as: 'usersPaciente' })
-    this.belongsTo(models.User, { foreignKey: 'fkUserMedico', as: 'usersMedico' })
+    this.belongsTo(models.Users, { foreignKey: 'fk_user_paciente', as: 'usersPaciente' })
+    this.belongsTo(models.Users, { foreignKey: 'fk_user_medico', as: 'usersMedico' })
   }
 }
-module.exports = ConsultaMedica
+module.exports = ConsultasMedicas

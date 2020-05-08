@@ -10,7 +10,7 @@ class AuthController {
       const response = await AuthService.store(req.body)
       if (response.status !== HTTP.OK) {
         return res.status(response.status)
-          .json({ error: new ErrorService(req, response).get() })
+          .json({ error: new ErrorService(req, response).get(), auth: false })
       }
 
       return res.status(HTTP.OK).json({ ...response })

@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize')
 const bcrypt = require('bcrypt')
-class User extends Model {
+class Users extends Model {
   static init (sequelize) {
     super.init({
       cpf: DataTypes.STRING,
@@ -23,8 +23,8 @@ class User extends Model {
   }
 
   static associate (models) {
-    this.hasMany(models.ConsultaMedica, { foreignKey: 'fkUserPaciente', as: 'pacienteConsultasMedicas' })
-    this.hasMany(models.ConsultaMedica, { foreignKey: 'fkUserMedico', as: 'medicoConsultasMedicas' })
+    this.hasMany(models.ConsultasMedicas, { foreignKey: 'fk_user_paciente', as: 'pacienteConsultasMedicas' })
+    this.hasMany(models.ConsultasMedicas, { foreignKey: 'fk_user_medico', as: 'medicoConsultasMedicas' })
   }
 }
-module.exports = User
+module.exports = Users

@@ -12,6 +12,16 @@ module.exports = {
     status: HTTP.BAD_REQUEST,
     describe: 'Incorrect login'
   },
+  incorretCity: {
+    type: 'incorretCity',
+    status: HTTP.BAD_REQUEST,
+    describe: 'Incorrect login city'
+  },
+  consultaBadLogin: {
+    type: 'consultaBadLogin',
+    status: HTTP.BAD_REQUEST,
+    describe: 'consulta médica já realizada'
+  },
   successLogin: {
     type: 'successLogin',
     status: HTTP.OK,

@@ -1,12 +1,13 @@
-const v = require('validator')
+const strValidator = require('validator')
+const { cpf } = require('cpf-cnpj-validator')
 
 class ValidatorUser {
-  validateEmail (email) {
-    return v.isEmail(v.trim(email))
+  validateCpf (cpfUser) {
+    return cpf.isValid(strValidator.trim(cpfUser))
   }
 
-  validatePassword (password) {
-    return v.isEmpty(v.trim(password))
+  validateCep (cep) {
+    return strValidator.isEmpty(strValidator.trim(cep))
   }
 }
 module.exports = ValidatorUser

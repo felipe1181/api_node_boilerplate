@@ -14,7 +14,5 @@ const connection = new Sequelize(
 
 db
   .map(model => model.init(connection))
-db
-  .map(model => model.associate && model.associate(connection.models))
-
+db.map(model => model.associate && model.associate(connection.models))
 module.exports = connection

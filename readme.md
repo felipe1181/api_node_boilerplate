@@ -11,7 +11,7 @@ src
      |_____models       # Determina a estrutura lógica que representa uma entidade do banco de dados
      |_____services     # Regras de negócio.
      |_____subscribers  # Eventos async - serviços de terceiros.
-      |_____jobs        # Rotinas, camada para armazenar tarefas
+     |_____jobs         # Rotinas, camada para armazenar tarefas
  |_____database         # Onde organizamos as migrations.
  |_____config           # Configuração das variáveis de ambiente.
       |_____env.js      # Arquivo de configuração das variáveis de ambiente.
