@@ -10,7 +10,7 @@ module.exports = {
   tokenLifetime: process.env.TOKEN_LIFETIME,
   portServer: process.env.PORT_SERVER,
   local: process.env.NODE_ENV,
-  cidadesAtivas: process.env.APP_CIDADES_ATIVAS,
+  cidadesAtivas: process.env.APP_CIDADES_ATIVAS.split(','),
   database: {
     host: process.env.DB_HOST,
     user: process.env.DB_USER,

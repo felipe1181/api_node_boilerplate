@@ -1,6 +1,5 @@
 const req = require('../request')
 const statusDescribe = require('../../../constants/ResponseRequestSubscriber')
-const config = require('../../../config/env')
 
 module.exports = {
   async request (cep) {

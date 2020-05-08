@@ -17,7 +17,9 @@ class AuthService {
     const { cpf, cep } = body
     try {
       if (!this.validate.validateCpf(cpf) || this.validate.validateCep(cep)) return Response.incorretLogin
-      if (!config.cidadesAtivas.indexOf(await viacep.get(cep))) return Response.incorretCity
+
+      const cityName = await viacep.get(cep)
+      if (!config.cidadesAtivas.find(city => city === cityName)) return Response.incorretCity
 
       const user = await this.user.findOne({
         where: { cpf },
@@ -40,7 +42,7 @@ class AuthService {
         auth: true
       }
     } catch (err) {
-      console.log(err)
+      console.log('errrr')
       return Response.incorretLogin
     }
   }
